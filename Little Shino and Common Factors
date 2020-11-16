@@ -1,0 +1,23 @@
+import math
+
+def factors(f):
+    i=1
+    li=[]
+    while(i<=math.sqrt(f)):
+        if(f%i==0):
+            if(f/i==i):
+                li.append(i)
+            else:
+                li.append(i)
+                li.append(f//i)
+        i+=1
+    return li
+
+a,b=map(int,input().split())
+li1=factors(a)
+li2=factors(b)
+ans=0
+for i in li1:
+    if i in li2:
+        ans+=1
+print(ans)
